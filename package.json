@@ -1,0 +1,22 @@
+{
+  "name": "s3-audio-tag",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "tap -B tests/**.test.js",
+    "setup": "npm run setup:localstack && npm run setup:bucket",
+    "setup:localstack": "docker-compose up -d",
+    "setup:bucket": "bash scripts/create-local-bucket.sh"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0",
+    "tap": "^18.7.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1574.0",
+    "mime-types": "^2.1.35",
+    "node-id3": "^0.2.6"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

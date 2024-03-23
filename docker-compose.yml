@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack
+    ports:
+      - "4566-4599:4566-4599"
+    environment:
+      - SERVICES=s3
+      - DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=client_id
+      - AWS_SECRET_ACCESS_KEY=client_secret
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
